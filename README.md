@@ -1,12 +1,12 @@
 The files necessary for all preprocessing can be found in the following links:
 
-National Hydrography Dataset Plus Version 2: https://nhdplus.com/NHDPlus/NHDPlusV2_home.php
-Bankfull Hydraulic Geometry Width for the Contiguous United States: https://www.sciencebase.gov/catalog/item/5cf02bdae4b0b51330e22b85
-ECMWF ERA5 Downward Shortwave Radiation Flux: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
-MODIS Leaf Area Index: https://modis.gsfc.nasa.gov/data/dataprod/mod15.php
+National Hydrography Dataset Plus Version 2: https://nhdplus.com/NHDPlus/NHDPlusV2_home.php<br>
+Bankfull Hydraulic Geometry Width for the Contiguous United States: https://www.sciencebase.gov/catalog/item/5cf02bdae4b0b51330e22b85<br>
+ECMWF ERA5 Downward Shortwave Radiation Flux: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview<br>
+MODIS Leaf Area Index: https://modis.gsfc.nasa.gov/data/dataprod/mod15.php<br>
 ETH Canopy Height Model: https://langnico.github.io/globalcanopyheight/
 
-The validation set can be foud in the following link:
+The validation set can be foud in the following link:<br>
 NEON In-Situ River Surface Photosynthetic Active Radiation: https://data.neonscience.org/data-products/DP1.20042.001
 
 1. The NHDPlus dataset is preprocessed in ArcGIS Pro before using in the R script. We first joined the bankfull hydraulic geometry widths attribute to the NHDPlus dataset. Specifically, we used the NHDFlowline_Network within the NHDPlusV21_NationalData_Seamless_Geodatabase_Lower48_07.7z file. We applied the "Smooth Line" geoprocessing tool on the NHDFlowline_Network using a smoothing algorithm of "Polynomial Approximation with Exponential Kernel". We then applied the "Simplify Line" tool on the output of the previous step using a simplification algorithm of "Retain critical points (Douglas-Peucker)". Afterwards, we used the "Split Line At Vertices" tool to obtain individual polylines.
